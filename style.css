@@ -1,0 +1,412 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* COLOR VARIABLES */
+    --color-primary: #c69963;
+    --color-primary-dark: #b28451;
+  
+    --color-secondary: rgb(16, 29, 44);
+  
+    --color-grey-light-1: #f9f7f6;
+    --color-grey-light-2: #aaa;
+  
+    --color-grey-dark-1: #54483a;
+    --color-grey-dark-2: #6d5d4b;}
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+      }
+.container{
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat( 3 , min-content);
+    grid-template-columns: 5rem minmax(5rem , 1fr) repeat(6,minmax(min-content,20rem))
+ minmax(5rem , 1fr);
+ grid-template-areas:
+"nav header header header header header realtors realtors realtors"
+"nav . services  services services services services services ."
+"nav story-img story-img story-img story-img story-content story-content story-content story-content"
+"nav . homes homes homes homes homes homes ."
+"nav grid-container grid-container grid-container grid-container grid-container grid-container grid-container grid-container"
+"nav footer footer footer footer footer footer footer footer";
+}
+.nav{
+    grid-area: nav;
+    background-color:#c69963;
+    padding-top:20px;
+    padding-left: 19px;
+}
+.header {
+    grid-area: header;
+    background: linear-gradient(rgba(16, 29, 44,0.83), rgba(16, 29, 44,0.83)) ,url("./house-3.jpeg");
+    background-size: 100% 100%,cover;
+    color: white;
+    padding: 7rem;
+    padding-top: 3rem;
+    display: grid;
+    grid-template-rows: minmax(5rem, 1fr) 3rem minmax(7rem,min-content) minmax(5rem, 1fr) 5rem ;
+  }
+  
+  .header h4 {
+      font-size: 1.6rem;
+      font-family: var(--font-primary);
+      color: var(--color-primary);  
+  }
+  
+  .header h1 {
+      font-size: 3.2rem;
+      font-family: var(--font-display);
+      color: white;
+  }
+  
+  .header h5 {
+      font-size: 1.5rem;
+      font-family: var(--font-display);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      align-items: center;
+      grid-gap: 1.5rem;
+  }
+  
+  .header h5::before,
+  .header h5::after {
+      content:'';
+      height: 1px;
+      width: 100%;
+      display: block;
+      background: white;
+  }
+  
+  .header h3 {
+      font-size: 1.7rem;
+      font-family: var(--font-display);
+      color: white;
+      background: var(--color-primary);
+      justify-self: start;
+      align-self: start;
+      font-weight: lighter;
+      padding: 1.5rem;
+  }
+  
+  .logo {
+      height: 3rem;
+      justify-self: center;
+  }
+  
+  .companyLogos {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(min-content,1fr));
+      justify-items: center;
+  }
+  
+  .companyLogos img {
+      width: 80%;
+      height: 3rem;
+  }
+  
+.hhh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.realtors{
+    grid-area: realtors;
+    background-color: #101d2c ;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+.hh{
+    width: 100px;
+
+    border-radius: 50%;
+}
+.realtorlist{
+    display: grid;
+    grid-template-columns: min-content max-content;
+    align-items: center;
+    justify-content: center;
+        row-gap: 15px;
+    column-gap: 15px;
+}
+
+  
+.story-img{
+    grid-area: story-img;
+    background-color: aquamarine;
+    background-image:linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(./brian-babb-XbwHrt87mQ0-unsplash.jpg);
+    background-size: 100%  100%,cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ 
+}
+.goalsiamg1{
+    width: 70%;
+    height: 50%;
+    box-shadow: 0.5rem 0.5rem 0.5rem black;
+
+}
+.contentout{
+    width: 60%;
+    height: 40%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+.story-content{
+    grid-area: story-content;
+    background-color:#f9f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    flex-flow: column;
+    padding: 8rem;
+    row-gap: 16px;
+}
+.content-story{
+    font-weight: 900;
+}
+p{
+    color: #c69963;
+    font-weight: bold;
+}
+button{
+    background-color: #c69963;
+    color: #fff;
+    font-weight: 900;
+    border-radius: 5px;
+    padding: 10px;
+}
+.hey{
+    font-style: italic;
+    row-gap: 2rem;
+}
+.homes{
+        grid-area: homes;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 10rem;
+        margin: 14rem 0;
+      
+      
+      }
+      
+      .home {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: var(--color-grey-light-1);
+        justify-items: center;
+        align-items: center;
+      }
+      
+      .homeImg {
+        grid-column: 1 / span 2;
+        background: lightcoral;
+        position: relative;
+        margin-bottom: 3.5rem;
+      }
+      
+      .homeInfo {
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        font-family: var(--font-display);
+        color: var(--color-grey-dark-2);
+      }
+      
+      .imgCommon {
+        width: 100%;
+      }
+      
+      .contactRealtorBtn {
+        grid-column: 1 / span 2;
+        background: var(--color-primary);
+        justify-self: stretch;
+        align-self: stretch;
+        padding: 1.7rem;
+        font-size: 2rem;
+        font-family: var(--font-display);
+        color: white;
+        margin-top: 2rem;
+      }
+      
+      .heartIcon {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        top: 3%;
+        right: 4%;
+        fill: white;
+        transition: fill 300ms ease-in-out;
+        cursor: pointer;
+      }
+      
+      .heartIcon:hover {
+        fill: rgba(255, 0, 0, 0.6);
+      }
+      
+      .homeDetailBtn {
+        background: black;
+        color: white;
+        font-size: 1.8rem;
+        font-family: var(--font-display);
+        width: 80%;
+        padding: 1.5rem 0;
+        position: absolute;
+        bottom: -2rem;
+        left: 10%;
+      }
+      
+      .pic {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;}
+    .grid-container{ 
+        grid-area:grid-container;
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(6,15vh);
+        grid-gap: 1.5rem ;
+        padding: 1rem;
+    
+    }
+    .gal-1{
+        background-image: url(./jean-philippe-delberghe-Ry9WBo3qmoc-unsplash.jpg);
+        background-size: 100% 100%,cover;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .gal-2{
+        background-image: url(./nick-hillier-IEkMMvdZFc0-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 3/ span 3;
+        grid-row: 1/ span 3;
+    }
+    .gal-3{
+        background-image: url(./andrea-davis-pK85wI_ZjuY-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 6/ span 1;
+        grid-row: 1/ span 2;
+    }
+    .gal-4{
+        background-image: url(./vu-anh-TiVPTYCG_3E-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 7/ span 2;
+        grid-row: 1/ span 2;
+    }
+    .gal-5{
+        background-image: url(./kam-idris-_HqHX3LBN18-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 1/ span 2;
+        grid-row: 3/ span 3;
+    }
+    .gal-6{
+        background-image: url(./brian-babb-XbwHrt87mQ0-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 3/ span 2;
+        grid-row: 4/ span 2;
+    }
+    .gal-7{
+        background-image: url(./todd-kent-178j8tJrNlc-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 5/ span 1;
+        grid-row: 4/ span 1;
+    }
+    .gal-8{
+        background-image: url(./kenny-eliason-mGZX2MOPR-s-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 6/ span 2;
+        grid-row: 3/ span 2;
+    }
+    .gal-9{
+        background-image: url(./jason-briscoe-AQl-J19ocWE-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 8/ span 1;
+        grid-row: 3/ span 3;
+    }
+    .gal-10{
+        background-image: url(./liana-mikah-Ul294fy2fmE-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 1/ span 1;
+        grid-row: 6/ span 1;
+    }
+    .gal-11{
+        background-image: url(./zac-gudakov-mw_mj-noYHM-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 2/ span 2;
+        grid-row: 6/ span 1;
+    }
+    .gal-12{
+        background-image: url(./andrea-davis-k8WL83m48XY-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 4/ span 1;
+        grid-row: 6/ span 1;
+    }
+    .gal-13{
+        background-image: url(./george-desipris-WpLm6hix8i8-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 5/ span 3;
+        grid-row: 5/ span 3;
+    }
+    .gal-14{
+        background-image: url(./luke-stackpoole-eWqOgJ-lfiI-unsplash.jpg);
+        background-size: 100% 100% , cover;
+        grid-column: 8/ span 1;
+        grid-row: 6/ span 1;
+    }
+
+    .footer {
+        grid-area: footer;
+        background-color: #101d2c;
+
+        padding: 3rem;
+      
+      }
+      
+      .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        justify-items: center;
+        color: #fff;
+        grid-gap: 3rem;
+        align-items: center;
+      }
+      
+      .listItem {
+          font-size: 1.6rem;
+          font-family: var(--font-primary);
+          font-weight: lighter;
+          /* background: rgba(255,255,255,0.1); */
+          padding: 1.5rem;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 2rem;
+          transition: all 300ms ease-in-out;
+          cursor: pointer;
+      }
+      
+      .listItem:hover {
+          background: rgba(255,255,255,0.1);
+          transform: translateY(-0.5rem);
+      }
+      
+      .footer > p {
+          font-size: 1.4rem;
+          color: white;
+          width: 70%;
+          margin: 0 auto;
+          text-align: center;
+          margin-top: 4rem;
+      }
+      
